@@ -20,8 +20,8 @@
         <ion-datetime required name="date" [(ngModel)]="gig.startTime" display-format=""></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Ticket Price*</ion-label>
-        <ion-input name="price" required (ionBlur)="formatCurrency($event.target.value)" [(ngModel)]="formattedPrice"></ion-input>
+        <ion-label position="floating">Ticket Price $*</ion-label>
+        <ion-input name="price" type="number" required [(ngModel)]="formattedPrice"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Ticket URL</ion-label>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
 import { Band } from 'src/models/band';
 import { NewGig } from 'src/models/gig';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-new-gig',
@@ -24,13 +24,17 @@ export class NewGigComponent implements OnInit {
 
   showNewBand = false;
 
-  constructor(private currencyPipe: CurrencyPipe) {}
+  constructor(private api: ApiService) {}
 
   ngOnInit() {}
 
-  formatCurrency(evt: string) {
-    const rawPrice = evt.replace(/[^0-9.]/g, "");
-    this.formattedPrice = this.currencyPipe.transform(rawPrice, "USD");
+  async getAvaiableBands() {
+    const bands = await this.api.request<Band[]>({
+      method: 'get',
+      route: 'bands'
+    });
+
+    this.bands = bands;
   }
 
   submit() {

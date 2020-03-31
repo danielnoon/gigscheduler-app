@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -23,7 +23,6 @@ import { NewBandComponent } from '../new-band/new-band.component';
     ])
   ],
   declarations: [HomePage, GigComponent, BandDetailsComponent, NewGigComponent, NewBandComponent],
-  entryComponents: [BandDetailsComponent, NewGigComponent],
-  providers: [CurrencyPipe]
+  entryComponents: [BandDetailsComponent, NewGigComponent]
 })
 export class HomePageModule {}
