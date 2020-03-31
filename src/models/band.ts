@@ -1,8 +1,8 @@
 export interface NewBand {
   name: string;
   hometown: string;
-  website: string;
-  pfp: string;
+  website?: string;
+  pfp?: string;
   headlining?: boolean;
 }
 

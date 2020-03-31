@@ -1,3 +1,27 @@
-<p>
-  new-band works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>New Band</ion-card-title>
+  </ion-card-header>
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input name="name" required [(ngModel)]="band.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Hometown</ion-label>
+    <ion-input name="hometown" required [(ngModel)]="band.hometown"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Website</ion-label>
+    <ion-input name="website" [(ngModel)]="band.website"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Profile Picture</ion-label>
+    <ion-input name="pfp" [(ngModel)]="band.pfp"></ion-input>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item color="primary" detail button (click)="submit()">
+    Submit New Band
+  </ion-item>
+</ion-card>
