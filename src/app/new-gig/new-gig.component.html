@@ -1,0 +1,38 @@
+<ion-content>
+  <h1>Create Gig</h1>
+
+  <ion-card>
+    <form
+    method="post"
+    action="/"
+    (ngSubmit)="submit()"
+    (keyup.enter)="submit()">
+      <ion-item>
+        <ion-label position="floating">Gig Name*</ion-label>
+        <ion-input name="name" required [(ngModel)]="gig.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Start Time*</ion-label>
+        <ion-datetime required name="time" [(ngModel)]="gig.startTime" display-format="h:mm A"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Date*</ion-label>
+        <ion-datetime required name="date" [(ngModel)]="gig.startTime" display-format=""></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ticket Price*</ion-label>
+        <ion-input name="price" required (ionBlur)="formatCurrency($event.target.value)" [(ngModel)]="formattedPrice"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ticket URL</ion-label>
+        <ion-input name="url" type="url" [(ngModel)]="gig.ticketUrl"></ion-input>
+      </ion-item>
+    </form>
+  </ion-card>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="submit()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

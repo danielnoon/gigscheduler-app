@@ -1,0 +1,22 @@
+.name {
+  text-align: center;
+}
+
+.pfp-wrapper {
+  display: flex;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.profile {
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 200px;
+}
+
+.headline-star {
+  margin-bottom: -3px;
+  margin-left: 3px;
+}

@@ -1,0 +1,14 @@
+<ion-content>
+  <div class="container">
+    <div class="pfp-wrapper">
+      <img class="profile" *ngIf="band.pfp" [src]="band.pfp">
+    </div>
+
+    <h1 class="name">{{ band.name }} <ion-icon *ngIf="band.headlining" class="headline-star" name="star"></ion-icon></h1>
+
+    <ion-card>
+      <ion-item><ion-icon slot="start" name="pin-outline"></ion-icon> {{ band.hometown }}</ion-item>
+      <ion-item *ngIf="band.website"><ion-icon slot="start" name="link-outline"></ion-icon> <a target="_blank" [href]="band.website">{{ band.website }}</a></ion-item>
+    </ion-card>
+  </div>
+</ion-content>

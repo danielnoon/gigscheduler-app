@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ gig.name }}</ion-card-title>
+    <ion-card-subtitle><ion-icon name="time-outline"></ion-icon> {{ getFancyTime() }}</ion-card-subtitle>
+    <ion-card-subtitle><ion-icon name="calendar-outline"></ion-icon> {{ getFancyDate() }}</ion-card-subtitle>
+    <ion-card-subtitle><ion-icon name="cash-outline"></ion-icon> {{ getFormattedPrice() }}</ion-card-subtitle>
+    <ion-card-subtitle *ngIf="gig.ticketUrl"><ion-icon name="link-outline"></ion-icon> <a [href]="gig.ticketUrl">Tickets</a></ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ gig.description }}</p>
+  </ion-card-content>
+
+  <ion-item button *ngFor="let band of gig.bands" (click)="openBandDetails(band)">
+    <ion-avatar slot="start">
+      <img *ngIf="band.pfp" [src]="band.pfp">
+    </ion-avatar>
+    {{ band.name }}
+    <ion-icon *ngIf="band.headlining" slot="end" name="star"></ion-icon>
+  </ion-item>
+
+  <ion-card-content *ngIf="gig.notes">
+    <p><small>{{ gig.notes }}</small></p>
+  </ion-card-content>
+</ion-card>
