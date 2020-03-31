@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 import { GigComponent } from '../gig/gig.component';
 import { BandDetailsComponent } from '../band-details/band-details.component';
 import { NewGigComponent } from '../new-gig/new-gig.component';
+import { NewBandComponent } from '../new-band/new-band.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { NewGigComponent } from '../new-gig/new-gig.component';
       }
     ])
   ],
-  declarations: [HomePage, GigComponent, BandDetailsComponent, NewGigComponent],
+  declarations: [HomePage, GigComponent, BandDetailsComponent, NewGigComponent, NewBandComponent],
   entryComponents: [BandDetailsComponent, NewGigComponent],
   providers: [CurrencyPipe]
 })
